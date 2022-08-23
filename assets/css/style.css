@@ -82,6 +82,14 @@ sub { bottom: -.25em; }
 .cf { *zoom: 1; }
 
 /*for all*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -97,58 +105,151 @@ li {
   list-style-type: none;
 }
 
+span { display: inline-block; }
+
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 90%; 
   margin: 0 auto;
 }
-/*=================================
-  Header styling starts here
-=================================*/
-
-
-
-
-
-
-/*=================================
-  Header styling ends here
-=================================*/  
 
 /*=================================
   main styling starts here
 =================================*/
 
+main .wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
 
+.list {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all .5s;
+  /* animation: anime 20s linear alternate infinite; */
+}
 
+/* @keyframes anime {
+  0%, 5% { left: 0; }
+  95%, 100% { left: -400%; }
+} */
 
+.list-items {
+  height: 100%;
+  flex: 1 0 100%;
+  display: block;
+  position: relative;
+  box-shadow: 0 5px 10px #333;
+  transition: all .3s;
+}
 
+/* optional '.display-none' for 2nd sliding effect : javascript */
+.list-items.display-none { display: none; }
 
+.list-items img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
+.list-heading {
+  width: 50%;
+  padding: 7px 0;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  text-transform: capitalize;
+  transform: translateX(-50%);
+}
+
+.slider-top-control {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.top-control {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  background: transparent;
+  box-shadow: inset 4px 4px 8px #fff,
+              inset -4px -4px 8px #000,
+              1px 1px 3px #000;
+  cursor: pointer;
+  text-indent: -99999px;
+  text-shadow: 0 0 10px #000;
+  transition: all .3s;
+}
+
+.top-control:hover {
+  box-shadow: inset 2px 2px 4px #fff,
+              inset -2px -2px 4px #000,
+              1px 1px 3px #000;
+  color: #000;
+  text-shadow: 0 0 4px #fff;
+}
+
+.top-control::before {
+  font-family: 'fontAwesome';
+  font-size: 22px;
+  text-indent: 0;
+}
+
+.top-control:first-child::before { content: '\f053'; }
+.top-control:last-child::before { content: '\f054'; }
+
+.slider-bottom-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 15px;
+}
+
+.bottom-control {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  background-color: #000;
+  box-shadow: inset 2px 2px 6px #fff,
+              inset -2px -2px 6px #000,
+              0 0 5px #000;
+  cursor: pointer;
+  text-indent: -99999px;
+  transition: all .3s;
+}
+
+.bottom-control:hover {
+  box-shadow: inset 1px 1px 3px #fff,
+              inset -1px -1px 3px #fff,
+              0 0 5px #000;
+}
 
 /*=================================
   main styling ends here
 =================================*/
-
-/*=================================
-  footer styling starts here
-=================================*/ 
-
-
-
-
-
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
-
-/*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
-
-
-
-}  
