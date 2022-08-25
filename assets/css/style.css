@@ -135,13 +135,7 @@ main .wrapper {
   align-items: center;
   position: relative;
   transition: all .5s;
-  /* animation: anime 20s linear alternate infinite; */
 }
-
-/* @keyframes anime {
-  0%, 5% { left: 0; }
-  95%, 100% { left: -400%; }
-} */
 
 .list-items {
   height: 100%;
@@ -152,8 +146,7 @@ main .wrapper {
   transition: all .3s;
 }
 
-/* optional '.display-none' for 2nd sliding effect : javascript */
-.list-items.display-none { display: none; }
+.list-items figure { height: 100%; }
 
 .list-items img {
   height: 100%;
@@ -178,10 +171,6 @@ main .wrapper {
 
 .slider-top-control {
   width: 100%;
-  padding: 0 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: absolute;
 }
 
@@ -192,17 +181,22 @@ main .wrapper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  color: #fff;
+  position: absolute;
+  top: 0;
   background: transparent;
   box-shadow: inset 4px 4px 8px #fff,
               inset -4px -4px 8px #000,
               1px 1px 3px #000;
+  color: #fff;
   cursor: pointer;
   text-indent: -99999px;
   text-shadow: 0 0 10px #000;
   transition: all .3s;
 }
+
+.prev { left: 10px; }
+.next { right: 10px; }
+.top-control.active { display: none; }
 
 .top-control:hover {
   box-shadow: inset 2px 2px 4px #fff,
