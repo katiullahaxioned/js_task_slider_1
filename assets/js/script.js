@@ -39,17 +39,9 @@ prev.addEventListener("click", function () {
 
 // bottom control functionality
 
-var a = 0;
-
-function slideListBottom(a) {
-  list.style.left = -a + "%";
-}
-
-slideListBottom(a);
-
 bottomControl.forEach(function (Control, index) {
   Control.addEventListener("click", function () {
-    a = percent * index;
-    slideListBottom(a);
+    positionLeft = -(percent * index);
+    slideList(positionLeft);
   });
 });
